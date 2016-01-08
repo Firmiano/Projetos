@@ -1,101 +1,44 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+
+@model UI.Models.LojasView[]
+
 <div>
-    <div class="row-fluid">
-
-        <a class="quick-button metro yellow span2">
-            <i class="icon-eye-open"></i>
-            <p>Visitas</p>
-            <span id="idVisita" class="badge">0</span>
-        </a>
-        <a class="quick-button metro red span2">
-            <i class="icon-user"></i>
-            <p>Novos Usuários</p>
-            <span class="badge">0</span>
-        </a>
-        <a class="quick-button metro blue span2">
-            <i class="icon-shopping-cart"></i>
-            <p>Orders</p>
-            <span class="badge">13</span>
-        </a>
-        <a class="quick-button metro green span2">
-            <i class="icon-barcode"></i>
-            <p>Products</p>
-        </a>
-        <a class="quick-button metro pink span2">
-            <i class="icon-envelope"></i>
-            <p>Messages</p>
-            <span class="badge">88</span>
-        </a>
-        <a class="quick-button metro black span2">
-            <i class="icon-calendar"></i>
-            <p>Calendar</p>
-        </a>
-
-        <div class="clearfix"></div>
-
-    </div><!--/row-->
+    @for (int i = 0; i < Model.Length; i++)
+    {
+        {
+            var usuarioParceiro = Model[i].UsuarioIdParceiro;
+            <div class="row-fluid">
+                <div class="widget blue span12" ontablet="span6" ondesktop="span12">
+                    <h2>
+                        <span id="@usuarioParceiro" class="glyphicons globe"><i></i>@usuarioParceiro</span>
+                    </h2>
+                    <hr>
+                    <div class="content">
+                        <div class="verticalChart">
+                            @foreach (var m in Model.Where(c => c.UsuarioIdParceiro == @usuarioParceiro))
+                            {
+                                <div class="singleBar">
+                                    <div class="bar">
+                                        <div class="value">
+                                            <span id="@m.LojaId" >@m.Usuarios</span>
+                                        </div>
+                                    </div>
+                                    <div class="title">@m.LojaId</div>
+                                </div>
+                                i++;
+                            }
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            i--;
+        }
+    }
 </div>
 <script type="text/javascript">
-
-    //$(document).keypress(function(e) {
-    //    if (e.which === 13) {
-    //        if (window.location.hostname !== 'localhost')
-    //            alert('You pressed enter!');
-    //    }
-    //});
-    window.addEventListener("load", function () {
-        $.ajax({
-            type: 'POST',
-            url: 'http://localhost:56062/api/visita/',
-            data: JSON.stringify({
-                "Produto": {
-                    "Id": 1,
-                    "Nome": "sample string 2",
-                    "Preco": 3.0,
-                    "Pontos": 4
-                },
-                "Usuario": {
-                    "Id": 1,
-                    "Nome": "sample string 2",
-                    "Saldo": 3
-                },
-                "Data": "2015-12-25T13:32:41.1398483-02:00",
-                "Aplicacao": "sample string 2"
-            }),
-            contentType: "application/json",
-            dataType: 'json'
-        });
-
-        window.addEventListener('beforeunload', function () {
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost:56062/api/visita/',
-                data: JSON.stringify({
-                    "Produto": {
-                        "Id": 1,
-                        "Nome": "sample string 2",
-                        "Preco": 3.0,
-                        "Pontos": 4
-                    },
-                    "Usuario": {
-                        "Id": 1,
-                        "Nome": "sample string 2",
-                        "Saldo": 3
-                    },
-                    "Data": "2015-12-25T13:32:41.1398483-02:00",
-                    "Aplicacao": "sample string 2"
-                }),
-                contentType: "application/json",
-                dataType: 'json'
-            });
-        });
-    });
-
-
-   
-
     //$(document).ready(function () {
     //    $(window).bind("beforeunload", function () {
     //        $.ajax({
@@ -122,16 +65,18 @@
     //    });
     //});
 
-    var listUsuarios = [];
-
+    
     $.getScript('http://localhost:56062/Scripts/jquery.signalR-2.2.0.min.js', function () {
         $.getScript('http://localhost:56062/signalr/hubs', function () {
             $.connection.hub.url = 'http://localhost:56062/signalr';
-            var myHub = $.connection.visita;
+            var myHub = $.connection.usuario;
 
-            myHub.client.novaVisita = function (msg) {
-                listUsuarios.push(msg.Usuario.Id);
-                $('#idVisita').text(listUsuarios.length);
+            myHub.client.novoEndereco = function (msg) {
+                debugger;
+                for (var i = 0; i < msg.length; i++) {
+                    var qtd = $('#' + msg[i].LojaId).text();
+                    $('#' + msg[i].LojaId).text(parseInt(qtd) + 1);
+                }
             }
 
             $.connection.hub.start();

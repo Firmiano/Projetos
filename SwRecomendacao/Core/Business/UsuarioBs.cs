@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
 using Core.Data.Repository;
 using Core.Entitys.EntityMongo;
 using Core.Mappers;
@@ -21,7 +23,31 @@ namespace Core.Business
             enderecoEntity.Location = GeoJson.Point(new GeoJson2DCoordinates(endereco.Latitude, endereco.Longitude)).ToBsonDocument();
 
             var repository = new EnderecoRepository();
-            repository.Insert(BsonDocument.Create(enderecoEntity));
+            repository.Insert(enderecoEntity);
+        }
+
+
+        public ICollection<ParceiroEnderecoMd> ListarLojasEntornoUsuario(int usuarioId, int raio)
+        {
+            var repository = new EnderecoRepository();
+
+            var usuario = repository.FindByUsuarioId(usuarioId);
+
+            var coordenadas = usuario["Location"]["coordinates"];
+
+            var result = repository.ListarPotTipoRaio(coordenadas[0].ToDouble(), coordenadas[1].ToDouble(), "ParceiroEndereco", raio);
+
+            var list = result.Select(r => new ParceiroEndereco()
+            {
+                Cep = r["Cep"].ToString(),
+                Location = (BsonDocument)r["Location"],
+                Rua = r["Rua"].ToString(),
+                Uf = r["Uf"].ToString(),
+                UsuarioIdParceiro = r["UsuarioIdParceiro"].ToInt32(),
+                LojaId = r["LojaId"].ToInt32()
+            }).ToList();
+
+            return list.Select(Mapper.Map<ParceiroEndereco, ParceiroEnderecoMd>).ToList();
         }
     }
 }

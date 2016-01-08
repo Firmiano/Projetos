@@ -112,3 +112,12 @@ C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\Microsoft.Owin.
 C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\obj\Debug\UI.dll
 C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\obj\Debug\UI.pdb
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\Core.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\AutoMapper.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\MongoDB.Driver.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\MongoDB.Bson.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\MongoDB.Driver.Core.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\Core.pdb
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\AutoMapper.xml
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\MongoDB.Driver.xml
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\UI\bin\MongoDB.Bson.xml

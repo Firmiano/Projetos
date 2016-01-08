@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Linq;
+using System.Web.Http;
+using Api.Hubs;
 using Core.Business;
 using Core.Model;
 
@@ -10,6 +12,10 @@ namespace Api.Controllers
         {
             var bs = new UsuarioBs();
             bs.CadastrarEndereco(endereco);
+
+            var lojas = bs.ListarLojasEntornoUsuario(endereco.UsuarioId, 5000).ToArray();
+            
+            UsuarioHub.PublicarNovoEndereco(lojas);
         }
     }
 }

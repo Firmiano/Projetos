@@ -3,7 +3,6 @@ using System;
 using Core.Data.Contexts;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using MongoDB.Driver.GeoJsonObjectModel;
 
 namespace Core.Data.Repository
 {
@@ -13,11 +12,15 @@ namespace Core.Data.Repository
         protected MongoRepository()
         {
             Context = new MongoContext();
-        } 
-
-        public IMongoCollection<BsonDocument> Collection()
+        }
+        public IMongoCollection<T> Collection()
+        {
+            return Context.Database.GetCollection<T>(typeof(T).Name);
+        }
+        public IMongoCollection<BsonDocument> CollectionGeneric()
         {
             return Context.Database.GetCollection<BsonDocument>(typeof(T).Name);
         }
+
     }
 }
