@@ -1,6 +1,9 @@
 ﻿
+using System;
 using Core.Data.Contexts;
+using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.GeoJsonObjectModel;
 
 namespace Core.Data.Repository
 {
@@ -12,9 +15,9 @@ namespace Core.Data.Repository
             Context = new MongoContext();
         } 
 
-        public IMongoCollection<T> Collection()
+        public IMongoCollection<BsonDocument> Collection()
         {
-            return Context.Database.GetCollection<T>("Enderecos");
+            return Context.Database.GetCollection<BsonDocument>(typeof(T).Name);
         }
     }
 }

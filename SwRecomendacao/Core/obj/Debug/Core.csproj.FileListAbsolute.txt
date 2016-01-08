@@ -10,3 +10,5 @@ C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\Core\obj\Debug\Core.dl
 C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\Core\obj\Debug\Core.pdb
 C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\Core\bin\Debug\AutoMapper.dll
 C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\Core\bin\Debug\AutoMapper.xml
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\Core\bin\Debug\Newtonsoft.Json.xml

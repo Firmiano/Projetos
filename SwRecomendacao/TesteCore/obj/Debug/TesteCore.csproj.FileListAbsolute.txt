@@ -1,0 +1,14 @@
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\TesteCore.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\TesteCore.pdb
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\Core.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\AutoMapper.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\MongoDB.Driver.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\MongoDB.Bson.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\Core.pdb
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\AutoMapper.xml
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\MongoDB.Driver.xml
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\bin\Debug\MongoDB.Bson.xml
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\obj\Debug\TesteCore.csprojResolveAssemblyReference.cache
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\obj\Debug\TesteCore.dll
+C:\Users\Firmiano\Desktop\Guilherme\GitHub\SwRecomendacao\TesteCore\obj\Debug\TesteCore.pdb
